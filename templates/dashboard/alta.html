@@ -1,0 +1,113 @@
+{% extends 'partials/base.html' %}
+{% block title %} DateMaster {% endblock%}
+
+{% block navtop %}
+<!--Topside-->
+<div class="container">
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header bg-info text-white color-custom">
+                  Statistics
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <a class="text-decoration-none text-dark" href="{% url 'dashboard-index' %}">
+                              <div class="card my-card shadow text-center p-3">
+                                  <h4 style="color: #191919;">Total de Itens<i class=""></i></h4>
+                                  <h1 style="color: #0a243d;">4</h3>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-md-3">
+                        <a class="text-decoration-none text-dark" href="{% url 'dashboard-alta' %}">
+                            <div class="card my-card shadow text-center p-3">
+                                <h4 style="color: #191919;">Validade Alta<i class=""></i></h4>
+                                <h1 style="color: #54ff8c;">4</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="text-decoration-none text-dark" href="{% url 'dashboard-media' %}">
+                            <div class="card my-card shadow text-center p-3">
+                                <h4 style="color: #191919;">Validade Média<i class=""></i></h4>
+                                <h1 style="color: #c7c903;">4</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="text-decoration-none text-dark" href="{% url 'dashboard-baixa' %}">
+                            <div class="card my-card shadow text-center p-3">
+                                <h4 style="color: #191919;">Validade Baixa<i class=""></i></h4>
+                                <h1 style="color: #ff0000;">4</h3>
+                            </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--End Topside-->
+{% endblock%}
+
+
+{% block content %}
+        <!--Table-->
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-12">
+                    <table class="table bg-white">
+                        <thead class="bg-info color-custom">
+                            <tr class="text-white">
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" href="">Edit</a>
+                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" href="">Edit</a>
+                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" href="">Edit</a>
+                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+    
+    
+    
+        <!--End Table-->
+{% endblock%}

@@ -1,0 +1,16 @@
+body{
+    background: rgb(0, 0, 0);
+}
+
+.my-card:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.color-custom {
+    background-color: #0a243d !important;
+}
+
+.bg-custom {
+  background-color: #f4f6ff !important;
+}

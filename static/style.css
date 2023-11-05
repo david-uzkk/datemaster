@@ -1,0 +1,17 @@
+body{
+    background: #f4f6ff;
+}
+
+.btn-info{
+    background-color: #0a243d !important;
+    border-color: #0a243d !important;
+}
+.my-card:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.color-custom {
+    background-color: #0a243d !important;
+    border-color: #0a243d !important;
+}

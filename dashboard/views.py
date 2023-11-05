@@ -1,0 +1,22 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def index(request):
+    return render(request, 'dashboard/index.html')
+
+def staff(request):
+    return render(request, 'dashboard/staff.html')
+
+def product(request):
+    return render(request, 'dashboard/product.html')
+
+def alta(request):
+    return render(request, 'dashboard/alta.html')
+
+def media(request):
+    return render(request, 'dashboard/media.html')
+
+def baixa(request):
+    return render(request, 'dashboard/baixa.html')
