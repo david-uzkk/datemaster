@@ -1,60 +1,8 @@
 {% extends 'partials/base.html' %}
 {% block title %} DateMaster {% endblock%}
 
-{% block navtop %}
-<!--Topside-->
-<div class="container">
-  <div class="row mt-4">
-      <div class="col-md-12">
-          <div class="card">
-              <div class="card-header bg-info text-white color-custom">
-                  Statistics
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-md-3">
-                          <a class="text-decoration-none text-dark" href="{% url 'dashboard-index' %}">
-                              <div class="card my-card shadow text-center p-3">
-                                  <h4 style="color: #191919;">Total de Itens<i class=""></i></h4>
-                                  <h1 style="color: #0a243d;">4</h3>
-                              </div>
-                          </a>
-                      </div>
-                      <div class="col-md-3">
-                          <a class="text-decoration-none text-dark" href="{% url 'dashboard-alta' %}">
-                              <div class="card my-card shadow text-center p-3">
-                                  <h4 style="color: #191919;">Validade Alta<i class=""></i></h4>
-                                  <h1 style="color: #54ff8c;">4</h3>
-                              </div>
-                          </a>
-                      </div>
-                      <div class="col-md-3">
-                          <a class="text-decoration-none text-dark" href="{% url 'dashboard-media' %}">
-                              <div class="card my-card shadow text-center p-3">
-                                  <h4 style="color: #191919;">Validade Média<i class=""></i></h4>
-                                  <h1 style="color: #c7c903;">4</h3>
-                              </div>
-                          </a>
-                      </div>
-                      <div class="col-md-3">
-                          <a class="text-decoration-none text-dark" href="{% url 'dashboard-baixa' %}">
-                              <div class="card my-card shadow text-center p-3">
-                                  <h4 style="color: #191919;">Validade Baixa<i class=""></i></h4>
-                                  <h1 style="color: #ff0000;">4</h3>
-                              </div>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!--End Topside-->
-{% endblock%}
-
-
 {% block content %}
+{% include 'partials/topnav.html' %}
 <!--Graphs-->
 <div class="container">
   <div class="row my-5">
