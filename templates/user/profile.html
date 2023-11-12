@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg-info text-white">
+                    <div class="card-header bg-info text-white color-custom">
                         Profile Page
                     </div>
                     <div class="card-body">
@@ -23,27 +23,23 @@
                                 <table class="table bg-white table-borderless">
                                     <tbody>
                                         <tr>
-                                            <th scope="row">Name</th>
-                                            <td>Mark</td>
+                                            <th scope="row">Nome</th>
+                                            <td>{{user.username}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Email</th>
-                                            <td>mark123@gmail.com</td>
+                                            <td>{{user.email}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Phone</th>
-                                            <td>00992283833</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Address</th>
-                                            <td>House Number 22 Dr. Ababio Street Ghana</td>
+                                            <td>{{user.profile.phone}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
 
                             </div>
                             <div class="col-md-4">
-                                <img class="img-thumbnail" src="./media/profile-img1.jpg" alt="">
+                                <img class="img-thumbnail" src="{{user.profile.image.url}}" alt="">
                             </div>
                         </div>
                     </div>

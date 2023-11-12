@@ -8,7 +8,7 @@ from .models import Product
 def index(request):
     return render(request, 'dashboard/index.html')
 
-@login_required
+@login_required()
 def staff(request):
     return render(request, 'dashboard/staff.html')
 

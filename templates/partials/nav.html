@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-info bg-info color-custom">
     {% if user.is_authenticated %}
   <div class="container">
-    <a class="navbar-brand text-white" href="{% url 'dashboard-index' %}"><img src="https://i.imgur.com/NDS9aTa.png" width="40" height="40" style="margin-right: 10px;">DateMaster</a>
+    <a class="navbar-brand text-white" href="{% url 'dashboard-index' %}"><img src="/media/site/logo_white.png" width="40" height="40" style="margin-right: 10px;">DateMaster</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,10 +26,12 @@
         </ul>
         {% endif %}
         <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated and user.is_staff and user.is_superuser %}
             <li class="nav-item active">
-                <a class="nav-link text-white" href="{% url 'user-profile' %}">Admin Profile <span
+                <a class="nav-link text-white" href="{% url 'user-profile' %}">{{user.username}} <span
                         class="sr-only">(current)</span></a>
             </li>
+            {% endif %}
             <li class="nav-item">
                 <a class="nav-link text-white" href="{% url 'user-logout' %}">Sair</a>
             </li>
