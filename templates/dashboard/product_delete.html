@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+{% block title %}Product Delete Page{% endblock %}
+
+{% block content %}
+
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-3 bg-white">
+            <h3>Deletar Item</h3>
+            <hr>
+            <form method="POST">
+                <div class="alert alert-danger">
+                    <h4>Voce tem certeza que deseja deletar o item?</h4>
+                </div>
+                {% csrf_token %}
+                {{ form }}
+                {% for item in items %}
+                <a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' pk=item.id %}">Deletar</a>
+                {% endfor %}
+                <input class="btn btn-danger btn-sm" type="submit" value="Confirm">
+                <a class="btn btn-secondary btn-sm" href="{% url 'dashboard-product' %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

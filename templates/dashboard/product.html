@@ -1,79 +1,52 @@
 {% extends 'partials/base.html' %}
 {% block title %} Inventario {% endblock%}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
         <!--Table-->
+        
         <div class="container">
             <div class="row my-4">
                 <div class="col-md-4">
                     <div class="border bg-white p-3">
                         <h4>Adicionar Produto</h4>
                         <hr>
-                        <form action="">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nome</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Quantidade</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="form-group ">
-                                <label for="inputState">Categoria</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Escolha...</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-    
-                            <input class="btn btn-success btn-block" type="submit" value="Adicionar">
-    
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            {{form|crispy}}
+                    
+                            <button type="submit" class="btn btn-success btn-block">Adicionar</button>
+                    
                         </form>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="col-md-8">
                     <table class="table bg-white">
                         <thead class="bg-info color-custom">
                             <tr class="text-white">
-                                <th scope="col">#</th>
                                 <th scope="col">Nome</th>
-                                <th scope="col">Categoria</th>
+                                <th scope="col">Lote</th>
                                 <th scope="col">Quantidade</th>
-                                <th scope="col">Atividade</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Validade</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in items %}
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.lot}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.category}}</td>
+                                <td>{{item.expiration_date}}</td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
+                                    <a class="btn btn-info btn-sm" href="{% url 'dashboard-product-update' pk=item.id %}">Editar</a>
+                                    <a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' pk=item.id %}">Deletar</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>
-                                    <a class="btn btn-info btn-sm" href="">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>
-                                    <a class="btn btn-info btn-sm" href="">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="">Delete</a>
-                                </td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
