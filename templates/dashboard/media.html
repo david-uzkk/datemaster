@@ -23,13 +23,13 @@
                         <tbody>
                             {% for item in items %}
                                 <tr >
-                                    <td style="background-color: rgb(170, 227, 170);">{{ item.name }}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">{{ item.lot }}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">{{ item.quantity }}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">{{ item.category }}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">{{ item.expiration_date|date:"d/m/y" }}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">{{item.observation}}</td>
-                                    <td style="background-color: rgb(170, 227, 170);">
+                                    <td style="background-color: rgb(233, 214, 138);">{{ item.name }}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">{{ item.lot }}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">{{ item.quantity }}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">{{ item.category }}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">{{ item.expiration_date|date:"d/m/y" }}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">{{item.observation}}</td>
+                                    <td style="background-color: rgb(233, 214, 138);">
                                         <a class="btn btn-info btn-sm" href="{% url 'dashboard-product-update' pk=item.id %}">Editar</a>
                                         <a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' pk=item.id %}">Deletar</a>
                                     </td>

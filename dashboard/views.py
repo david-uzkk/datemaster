@@ -1,3 +1,4 @@
+from django.db import connection
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -71,8 +72,37 @@ def alta(request):
 
 @login_required
 def media(request):
-    return render(request, 'dashboard/media.html')
+    current_date = date.today()
+
+    # Calcula a data
+    thirty_days_ago = current_date + timedelta(days=30)
+    ninety_days_ago = current_date + timedelta(days=90)
+
+    # Use a função NOW() ou CURDATE() dependendo do seu banco de dados
+    query = '''
+        SELECT * 
+        FROM dashboard_product 
+        WHERE expiration_date BETWEEN %s AND %s
+    '''
+
+    items = Product.objects.raw(query, [thirty_days_ago, ninety_days_ago])
+
+    context = {
+        'items': items,
+    }
+    return render(request, 'dashboard/media.html', context)
 
 @login_required
 def baixa(request):
-    return render(request, 'dashboard/baixa.html')
+    #items = Product.objects.all()
+    current_date = date.today()
+
+    # Calcula a data
+    thirty_days_from_now = current_date + timedelta(days=30)
+
+    # Filtra os produtos com menos de 30 dias até a data de expiração
+    items = Product.objects.filter(expiration_date__gt=current_date, expiration_date__lt=thirty_days_from_now)
+    context = {
+        'items': items,
+    }
+    return render(request, 'dashboard/baixa.html', context)

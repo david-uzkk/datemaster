@@ -16,7 +16,17 @@ body{
     border-color: #0a243d !important;
 }
 
-.color-custom-alta {
+.green {
     background-color: #dee6df !important;
-    border-color: ##ee6df !important;
+    border-color: #dee6df !important;
+}
+
+.yellow {
+    background-color: #e6e6de !important;
+    border-color: #e6e6de !important;
+}
+
+.red {
+    background-color: #e6dede ;
+    border-color: #e6dede;
 }
