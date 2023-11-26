@@ -8,11 +8,11 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 ">
                             <a class="text-decoration-none text-dark" href="{% url 'dashboard-product' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4 style="color: #191919;">Total de Itens<i class=""></i></h4>
-                                    <h1 style="color: #0a243d;">4</h3>
+                                    <h1 style="color: #0a243d;">{{ item_countp }}</h3>
                                 </div>
                             </a>
                         </div>
@@ -20,7 +20,7 @@
                             <a class="text-decoration-none text-dark" href="{% url 'dashboard-alta' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4 style="color: #191919;">Mais de 90 dias<i class=""></i></h4>
-                                    <h1 style="color: #54ff8c;">4</h3>
+                                    <h1 style="color: #54ff8c;">{{ item_counta }}</h3>
                                 </div>
                             </a>
                         </div>
@@ -28,7 +28,7 @@
                             <a class="text-decoration-none text-dark" href="{% url 'dashboard-media' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4 style="color: #191919;">30 a 90 dias<i class=""></i></h4>
-                                    <h1 style="color: #c7c903;">4</h3>
+                                    <h1 style="color: #c7c903;">{{ item_countm }}</h3>
                                 </div>
                             </a>
                         </div>
@@ -36,7 +36,7 @@
                             <a class="text-decoration-none text-dark" href="{% url 'dashboard-baixa' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4 style="color: #191919;">Menos de 30 dias<i class=""></i></h4>
-                                    <h1 style="color: #ff0000;">4</h3>
+                                    <h1 style="color: #ff0000;">{{ item_countb }}</h3>
                                 </div>
                             </a>
                         </div>
